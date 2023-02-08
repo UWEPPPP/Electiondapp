@@ -4,22 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8dbdd44f-04c1-4331-9dcb-cbca9c5206b2" name="变更" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/anvil密钥大全" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Controller/ElectionController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Start.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/View/ElectionView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Election.sol" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/log4j.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Election.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Election.java" afterDir="false" />
+    <list default="true" id="8dbdd44f-04c1-4331-9dcb-cbca9c5206b2" name="变更" comment="new">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/BO/ElectionBO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/DAO/ElectionDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/PO/ElectionPO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Tool/mysqlUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/ElectionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/ElectionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Election.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Tool/Election.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Start.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Start.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/ElectionView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/ElectionView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,6 +33,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/main/java/Start.java" root0="SKIP_INSPECTION" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -46,6 +46,9 @@
         <option name="userSettingsFile" value="D:\.maven\apache-maven-3.8.7\conf\settings.xml" />
       </MavenGeneralSettings>
     </option>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="2LSKgM6VJeulHqAU3oDQ6GL8iiR" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -68,6 +71,11 @@
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
     "settings.editor.selected.configurable": "MavenSettings"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
+    ]
   }
 }]]></component>
   <component name="RecentsManager">
@@ -80,6 +88,7 @@
       <recent name="C:\Users\刘家辉\IdeaProjects\election\src\main\java" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="Tool" />
       <recent name="" />
     </key>
   </component>
@@ -91,8 +100,16 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1675859153610</updated>
-      <workItem from="1675859154941" duration="1841000" />
+      <workItem from="1675859154941" duration="8727000" />
     </task>
+    <task id="LOCAL-00001" summary="new">
+      <created>1675862313292</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1675862313292</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -108,5 +125,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="new" />
+    <option name="LAST_COMMIT_MESSAGE" value="new" />
   </component>
 </project>

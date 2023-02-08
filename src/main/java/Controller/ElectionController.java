@@ -1,5 +1,11 @@
 package Controller;
 
+import BO.ElectionBO;
+import Tool.Election;
+import View.ElectionView;
+
+import java.util.List;
+
 /**
  * 选举控制器
  *
@@ -8,12 +14,21 @@ package Controller;
  */
 public class ElectionController {
     public static void init() throws Exception {
-        Logic.deploy();
+        ElectionBO.deploy();
     }
     public static Boolean login() throws Exception {
-       return Logic.loginIn();
+       return ElectionBO.loginIn();
     }
-    public static void run() throws Exception {
-        Logic.goRun();
+    public static void enterCommon() throws Exception {
+         ElectionBO.common();
+    }
+    public static void enterRoot() throws Exception {
+        ElectionBO.root();
+    }
+    public static void showAll(List<Election.CandicateInformationEventResponse> list){
+        ElectionView.resultView(list);
+    }
+    public static void showMan(List<Election.CandicateInformationEventResponse> list){
+        ElectionView.manView(list);
     }
 }
