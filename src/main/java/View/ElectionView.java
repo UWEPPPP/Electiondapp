@@ -1,6 +1,6 @@
 package View;
 
-import Tool.Election;
+import Tool.Web3jUtil;
 
 import java.util.List;
 
@@ -11,15 +11,15 @@ import java.util.List;
  * @date 2023/02/08
  */
 public class ElectionView {
-    public static void resultView(List<Election.CandicateInformationEventResponse> list){
+    public static void resultView(List<Web3jUtil.CandicateInformationEventResponse> list){
         int i=0;
-        for (Election.CandicateInformationEventResponse response : list) {
+        for (Web3jUtil.CandicateInformationEventResponse response : list) {
             System.out.println((++i)+". 选举人 "+response.name+" 投票数 "+response.voteCount);
         }
     }
-    public static void manView(List<Election.CandicateInformationEventResponse> list){
+    public static void manView(List<Web3jUtil.CandicateInformationEventResponse> list){
         int i=0;
-        for (Election.CandicateInformationEventResponse response:list) {
+        for (Web3jUtil.CandicateInformationEventResponse response:list) {
             System.out.println((++i)+". 选举人"+response.name);
         }
     }

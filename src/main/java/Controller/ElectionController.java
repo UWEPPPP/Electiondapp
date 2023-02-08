@@ -1,7 +1,7 @@
 package Controller;
 
 import BO.ElectionBO;
-import Tool.Election;
+import Tool.Web3jUtil;
 import View.ElectionView;
 
 import java.util.List;
@@ -25,10 +25,10 @@ public class ElectionController {
     public static void enterRoot() throws Exception {
         ElectionBO.root();
     }
-    public static void showAll(List<Election.CandicateInformationEventResponse> list){
+    public static void showAll(List<Web3jUtil.CandicateInformationEventResponse> list){
         ElectionView.resultView(list);
     }
-    public static void showMan(List<Election.CandicateInformationEventResponse> list){
+    public static void showMan(List<Web3jUtil.CandicateInformationEventResponse> list){
         ElectionView.manView(list);
     }
 }

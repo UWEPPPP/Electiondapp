@@ -6,7 +6,9 @@ import java.sql.*;
 import java.util.Properties;
 
 /**
- * mysql连接
+ * mysql工具
+ * * @author 刘家辉
+ * @date 2023/02/08
  */
 public class mysqlUtil {
     private static Connection connection;

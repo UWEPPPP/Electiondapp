@@ -1,11 +1,9 @@
 package BO;
 
 import Controller.ElectionController;
-import DAO.ElectionDAO;
 import PO.ElectionPO;
-import Tool.Election;
+import Tool.Web3jUtil;
 import org.web3j.crypto.Credentials;
-import org.web3j.protocol.Web3j;
 import org.web3j.protocol.exceptions.TransactionException;
 import org.web3j.tx.gas.DefaultGasProvider;
 
@@ -14,12 +12,18 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Scanner;
 
+/**
+ * 选举博
+ *
+ * @author 刘家辉
+ * @date 2023/02/08
+ */
 public class ElectionBO {
     static String contractAddress;
-    static Election user;
-    static Election owner;
+    static Web3jUtil user;
+    static Web3jUtil owner;
     static Scanner in =new Scanner(System.in);
-    static Web3j web3j;
+    static org.web3j.protocol.Web3j web3j;
     static String ownerKey;
     /**
      * 部署
@@ -30,12 +34,12 @@ public class ElectionBO {
         ownerKey=election.getKey();
         web3j=election.getWeb3j();
         Credentials credentials= election.getCredentials();
-        owner=Election.deploy(web3j,credentials,new DefaultGasProvider()).send();
+        owner= Web3jUtil.deploy(web3j,credentials,new DefaultGasProvider()).send();
         contractAddress=owner.getContractAddress();
     }
 
 
-    public static Boolean loginIn() throws Exception {
+    public static Boolean loginIn()  {
         int spilt;
         do{
             spilt=0;
@@ -43,7 +47,7 @@ public class ElectionBO {
         Credentials credentials=Credentials.create(key);
             if(!Objects.equals(key, ownerKey)){
                try{
-                  user= Election.load(contractAddress,web3j,credentials,new DefaultGasProvider());
+                  user= Web3jUtil.load(contractAddress,web3j,credentials,new DefaultGasProvider());
                   }catch (RuntimeException rte){
                    spilt=1;
                    System.out.println("输入密钥错误，请重新输入");
@@ -80,7 +84,7 @@ public class ElectionBO {
     }
 
 
-    public static List<Election.CandicateInformationEventResponse> getList() throws Exception {
+    public static List<Web3jUtil.CandicateInformationEventResponse> getList() throws Exception {
         return user.getCandicateInformationEvents(user.get().send());
     }
 
