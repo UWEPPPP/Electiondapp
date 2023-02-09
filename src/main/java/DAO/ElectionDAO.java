@@ -1,10 +1,8 @@
 package DAO;
 
-import Tool.mysqlUtil;
+import Tool.MysqlUtil;
 
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
@@ -27,10 +25,10 @@ public class ElectionDAO {
     }
 
     public ElectionDAO() throws SQLException, IOException {
-            ResultSet resultSet= mysqlUtil.getResultSet();
+            ResultSet resultSet= MysqlUtil.getResultSet();
             resultSet.next();
            key= (String) resultSet.getObject("key");
            http= (String) resultSet.getObject("http");
-           mysqlUtil.close();
+           MysqlUtil.close();
         }
 }

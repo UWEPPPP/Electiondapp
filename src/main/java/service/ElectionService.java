@@ -1,6 +1,5 @@
-package BO;
+package service;
 
-import Controller.ElectionController;
 import PO.ElectionPO;
 import Tool.Web3jUtil;
 import org.web3j.crypto.Credentials;
@@ -18,7 +17,7 @@ import java.util.Scanner;
  * @author 刘家辉
  * @date 2023/02/08
  */
-public class ElectionBO {
+public class ElectionService {
     static String contractAddress;
     static Web3jUtil user;
     static Web3jUtil owner;
@@ -39,49 +38,22 @@ public class ElectionBO {
     }
 
 
-    public static Boolean loginIn()  {
-        int spilt;
-        do{
-            spilt=0;
-        String key=in.next();
+    public static int loginIn(String key)  {
         Credentials credentials=Credentials.create(key);
-            if(!Objects.equals(key, ownerKey)){
+        if(!Objects.equals(key, ownerKey)){
                try{
                   user= Web3jUtil.load(contractAddress,web3j,credentials,new DefaultGasProvider());
                   }catch (RuntimeException rte){
-                   spilt=1;
                    System.out.println("输入密钥错误，请重新输入");
+                   return 3;
                    }
-                   if(spilt==0) {
-                         return true;
-                   }
-             }else{
+            return 1;
+          }else{
             System.out.println("管理员你好");
-            return false;
-                  }
-        }while (true);
-        }
+            return 2;
+          }
+    }
 
-    /**
-     * 根
-     *
-     */
-    public static void root() throws Exception {
-            int choice= in.nextInt();
-            switch (choice){
-                case 1:addCandidate();break;
-                case 2:kill();break;
-                default:System.out.println("输入数据无效,请重新输入");root();
-    }
-    }
-    public static void common() throws Exception {
-        int choice = in.nextInt();
-        switch (choice) {
-            case 1: vote();break;
-            case 2: getAll();break;
-            default: System.out.println("输入数据无效,请重新输入");common();
-        }
-    }
 
 
     public static List<Web3jUtil.CandicateInformationEventResponse> getList() throws Exception {
@@ -89,20 +61,12 @@ public class ElectionBO {
     }
 
 
-    public static void getAll() throws Exception {
-        ElectionController.showAll(getList());
-    }
 
-
-    public static void vote() throws Exception {
-        ElectionController.showMan(getList());
-        System.out.println("请根据序号选择要投票的人");
-        int choice = in.nextInt();
+    public static void vote(int choice) throws Exception {
         try {
             user.vote(BigInteger.valueOf(choice)).send();
         }catch (TransactionException e){
-            System.out.println("输入非法");
-            vote();
+            System.out.println("输入非法,原因可能是你已经投过票了或者不存在该投票人");
         }
     }
 
@@ -111,12 +75,8 @@ public class ElectionBO {
         owner.kill().send();
     }
 
-
-    public static void addCandidate() throws Exception {
-        System.out.println("输入要添加的候选者");
-        String name=in.next();
+    public static void addCandidate(String name) throws Exception {
         owner.addCandidate(name).send();
-        System.out.println("输入完毕");
     }
 }
 

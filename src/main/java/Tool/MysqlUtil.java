@@ -10,7 +10,7 @@ import java.util.Properties;
  * * @author 刘家辉
  * @date 2023/02/08
  */
-public class mysqlUtil {
+public class MysqlUtil {
     private static Connection connection;
     private static PreparedStatement preparedStatement;
     private static ResultSet resultSet;
